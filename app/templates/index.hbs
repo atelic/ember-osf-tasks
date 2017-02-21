@@ -1,12 +1,9 @@
-<p>
-    Welcome to your new demonstration app! We hope you enjoy using the OSF. The following demonstration pages are
-    available to showcase sample functionality:
-</p>
-
-<ul>
-    {{#if session.isAuthenticated}}
-        <li>{{#link-to "me"}}User information{{/link-to}} (requires user to be logged in)</li>
-    {{else}}
-        <li>{{#link-to "login"}}Log in{{/link-to}}</li>
-    {{/if}}
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Options:</h2>
+      <h4>{{#link-to "groups"}}Manage groups{{/link-to}}</h4>
+      <h4>{{#link-to "tasks"}}Run tasks{{/link-to}}</h4>
+    </div>
+  </div>
+</div>
