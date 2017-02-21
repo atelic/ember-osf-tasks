@@ -13,6 +13,17 @@ export default Ember.Controller.extend({
         this.set('move', false);
         this.set('manage', true);
       }
+    },
+    runTask() {
+      if (this.get('move')) {
+        const from = $('#moveFrom').val();
+        const to = $('#moveTo').val();
+        console.log(`TODO fire to lambda. fromId: ${from} toId: ${to}`);
+      } else {
+        const from = $('#manageFrom').val();
+        const permission = $('manageVal').val();
+        console.log(`TODO fire to lambda. fromId: ${from} with permission: ${permission}`);
+      }
     }
   }
 });
