@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>OSF Group Managemant</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Groups</h3>
+            {{#if show}} {{input class="form-control" type="text" value=title autofocus="true" enter="addItem"}} {{/if}} {{group-listing items=model.groups}}
+            <button {{action 'toggleShow'}} class="btn btn-success">&#43; New</button>
+        </div>
+        <div class="col-md-4">
+            <h3>Users</h3>
+            {{group-listing items=model.users}}
+        </div>
+        <div class="col-md-4">
+            <h3>Projects</h3>
+            {{group-listing items=model.projects}}
+        </div>
+    </div>
+</div>
