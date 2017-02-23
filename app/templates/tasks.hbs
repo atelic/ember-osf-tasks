@@ -5,7 +5,7 @@
       <h4>I want to
         <select onchange={{action 'changeText' value="target.value" }} class="form-control-inline">
           <option disabled selected value> -- select an option -- </option>
-          {{#each model.options as |task|}}
+          {{#each options as |task|}}
             <option>{{task}}</option>
           {{/each}}
         </select> {{#if move}} from

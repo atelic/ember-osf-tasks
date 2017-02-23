@@ -4,6 +4,7 @@ export default Ember.Controller.extend({
   extraText: '',
   move: false,
   manage: false,
+  options: ['move contributors', 'manage permissions'],
   actions: {
     changeText(option) {
       if (option === 'move contributors') {

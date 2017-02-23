@@ -2,10 +2,23 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   currentUser: Ember.inject.service(),
+  user: null,
 
+  _loadCurrentUser() {
+    this.get('currentUser')
+      .load()
+      .then(user => {
+        console.log(user.id);
+        this.set('user', user);
+      });
+  },
+  init() {
+    this._super(...arguments);
+    this._loadCurrentUser();
+  },
   model() {
+    // let id = this.get('user').id;
     return {
-      options: ['move contributors', 'manage permissions'],
       projects: this.store.query('node', {
         filter: {
           contributors: 'fktdp'
