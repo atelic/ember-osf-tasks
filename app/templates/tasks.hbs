@@ -1,36 +1,43 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <h1>OSF - Task Management</h1>
-      <h4>I want to
-        <select onchange={{action 'changeText' value="target.value" }} class="form-control-inline">
-          <option disabled selected value> -- select an option -- </option>
-          {{#each options as |task|}}
-            <option>{{task}}</option>
-          {{/each}}
-        </select> {{#if move}} from
-          <select class="form-control-inline" id="moveFrom" name="">
-            {{#each model.projects as |proj|}}
-              <option value="{{proj.id}}">{{proj.title}}</option>
-            {{/each}}
-          </select> to
-          <select class="form-control-inline" id="moveTo" name="">
-            {{#each model.projects as |proj|}}
-              <option value="{{proj.id}}">{{proj.title}}</option>
-            {{/each}}
-          </select> {{/if}} {{#if manage}} on
-            <select class="form-control-inline" id="manageOn" name="">
-              {{#each model.projects as |proj|}}
-                <option value="{{proj.id}}">{{proj.title}}</option>
-              {{/each}}
-            </select> to
-            <select class="form-control-inline" id="manageVal" name="">
-              <option value="admin">Admin</option>
-              <option value="write">Read+Write</option>
-              <option value="read">Read only</option>
-            </select> {{/if}}
-      </h4>
-      <button {{action 'runTask'}} class="btn btn-success text-center">Run</button>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <h1>OSF - Task Management</h1>
+            <h4>
+                I want to
+                <select onchange={{action 'changeText' value="target.value" }} class="form-control-inline">
+                    <option disabled selected value> -- select an option -- </option>
+                    {{#each options as |task|}}
+                        <option>{{task}}</option>
+                    {{/each}}
+                </select>
+                {{#if move}}
+                    from
+                    <select class="form-control-inline" id="moveFrom" name="">
+                        {{#each model.projects as |proj|}}
+                            <option value="{{proj.id}}">{{proj.title}}</option>
+                        {{/each}}
+                    </select> to
+                    <select class="form-control-inline" id="moveTo" name="">
+                        {{#each model.projects as |proj|}}
+                            <option value="{{proj.id}}">{{proj.title}}</option>
+                        {{/each}}
+                    </select>
+                {{/if}}
+                {{#if manage}}
+                    on
+                    <select class="form-control-inline" id="manageOn" name="">
+                        {{#each model.projects as |proj|}}
+                            <option value="{{proj.id}}">{{proj.title}}</option>
+                        {{/each}}
+                    </select> to
+                    <select class="form-control-inline" id="manageVal" name="">
+                        <option value="admin">Admin</option>
+                        <option value="write">Read+Write</option>
+                        <option value="read">Read only</option>
+                    </select>
+                {{/if}}
+            </h4>
+            <button {{action 'runTask'}} class="btn btn-success text-center">Run</button>
+        </div>
     </div>
-  </div>
 </div>
