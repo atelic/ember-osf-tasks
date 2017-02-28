@@ -8,7 +8,6 @@ export default Ember.Route.extend({
     this.get('currentUser')
       .load()
       .then(user => {
-        console.log(user.id);
         this.set('user', user);
       });
   },

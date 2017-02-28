@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
@@ -19,11 +20,19 @@ export default Ember.Controller.extend({
       if (this.get('move')) {
         const from = $('#moveFrom').val();
         const to = $('#moveTo').val();
-        console.log(`TODO fire to lambda. fromId: ${from} toId: ${to}`);
+        const payload = JSON.stringify({
+          "to": to,
+          "from": from
+        });
+        console.log(payload);
       } else {
-        const from = $('#manageFrom').val();
-        const permission = $('manageVal').val();
-        console.log(`TODO fire to lambda. fromId: ${from} with permission: ${permission}`);
+        const from = $('#manageOn').val();
+        const permission = $('#manageVal').val();
+        const payload = JSON.stringify({
+          "from": from,
+          "permission": permission
+        });
+        console.log(payload);
       }
     }
   }
