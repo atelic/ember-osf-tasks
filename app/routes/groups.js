@@ -3,8 +3,12 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model() {
     return {
-      users: ['Emma Goldman', 'John Brown', 'Frederick Douglass'],
-      projects: ['Alpha', 'Beta']
+      users: this.store.findAll('user'),
+      projects: this.store.query('node', {
+        filter: {
+          contributors: 'fktdp'
+        }
+      })
     };
   }
 });
