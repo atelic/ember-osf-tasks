@@ -1,10 +1,8 @@
 import Ember from 'ember';
-import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
+import CurrentUserMixin from '../mixins/current-user';
 
-export default Ember.Route.extend(AuthenticatedRouteMixin, {
-  currentUser: Ember.inject.service(),
-
+export default Ember.Route.extend(CurrentUserMixin, {
   model() {
-    return this.get('currentUser').load();
+    return this.get('user');
   }
 });
