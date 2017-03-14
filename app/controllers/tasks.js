@@ -21,16 +21,16 @@ export default Ember.Controller.extend({
         const from = $('#moveFrom').val();
         const to = $('#moveTo').val();
         const payload = JSON.stringify({
-          "to": to,
-          "from": from
+          to: to,
+          from: from
         });
         console.log(payload);
       } else {
         const from = $('#manageOn').val();
         const permission = $('#manageVal').val();
         const payload = JSON.stringify({
-          "from": from,
-          "permission": permission
+          from: from,
+          permission: permission
         });
         console.log(payload);
       }

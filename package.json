@@ -61,8 +61,37 @@
   },
   "dependencies": {},
   "greenkeeper": {
-    "ignore": [
-      "ember-cli"
-    ]
+    "ignore": ["ember-cli"]
+  },
+  "jscsConfig": {
+    "preset": "airbnb",
+    "excludeFiles": [
+      "package.json",
+      "bower.json",
+      "testem.js",
+      "ember-cli-build.js",
+      "config/environment.js",
+      "bower_components",
+      "node_modules",
+      "coverage",
+      "dist",
+      "docs",
+      "tmp",
+      "vendor",
+      "app/locales",
+      "tests/unit",
+      "tests/integration",
+      "tests/helpers"
+    ],
+    "requireSpacesInsideObjectBrackets": false,
+    "requireSpacesInsideImportedObjectBraces": false,
+    "requireSpacesInAnonymousFunctionExpression": false,
+    "requireTrailingComma": false,
+    "disallowTrailingComma": false,
+    "requirePaddingNewLinesAfterBlocks": false,
+    "validateIndentation": 2,
+    "requirePaddingNewLinesBeforeLineComments": false,
+    "maximumLineLength": false,
+    "disallowSpaceBeforeComma": false
   }
 }
