@@ -1,24 +1,34 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  show: false,
+  showInput: false,
   title: '',
-  groups: ['Writers', 'Abolitionists'],
+  groups: [{name:'Writers', users: ['Eric', 'Sky']}, {name:'Abolitionists', users: ['Kesha']}],
   showGroups: Ember.computed.notEmpty('groups'),
+
   actions: {
     toggleShow() {
-      this.toggleProperty('show');
+      this.toggleProperty('showInput');
     },
     addItem(name) {
-      this.toggleProperty('show');
+      this.toggleProperty('showInput');
       this.set('title', '');
       const g = this.get('groups');
-      this.set('groups', g.concat([name]));
-      const group = this.store.createRecord('group', {
+      const newGroup = {
         name: name,
         users: []
-      });
+      };
+      this.set('groups', g.concat([newGroup]));
+      const group = this.store.createRecord('group', newGroup);
       group.save();
+    },
+    groupFilter(title) {
+      const groups = this.get('groups');
+      groups.forEach(group => {
+        if (group.name === title) {
+          console.log(group.users);
+        }
+      });
     }
   }
 });
