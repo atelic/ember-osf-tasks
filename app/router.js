@@ -9,7 +9,9 @@ const Router = Ember.Router.extend({
 Router.map(function () {
   this.route('login');
   this.route('me');
-  this.route('groups');
+  this.route('groups', function() {
+    this.route('show', {path: '/:id'});
+  });
   this.route('tasks');
 });
 

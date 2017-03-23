@@ -11,8 +11,8 @@
                 {{input class="form-control" type="text" value=title autofocus="true" enter="addItem"}}
             {{/if}}
             <ul class="list-group">
-                {{#each groups as |item|}}
-                    <li class="list-group-item" {{action 'groupFilter' item.name}}>{{item.name}}</li>
+                {{#each model.groups as |item|}}
+                    <li class="list-group-item">{{#link-to "groups.show" item}}{{item.name}}{{/link-to}}</li>
                 {{/each}}
             </ul>
             <button {{action 'toggleShow'}} class="btn btn-success">&#43; New</button>

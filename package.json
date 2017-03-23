@@ -55,6 +55,9 @@
     "ember-page-title": "3.1.5",
     "ember-resolver": "^2.0.3",
     "eslint": "^3.18.0",
+    "ember-welcome-page": "^2.0.3",
+    "emberfire": "2.0.6",
+    "jscs": "^3.0.7",
     "loader.js": "^4.0.1",
     "phantomjs-prebuilt": "2.1.14",
     "yuidocjs": "^0.10.2"
