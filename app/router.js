@@ -10,7 +10,7 @@ Router.map(function () {
   this.route('login');
   this.route('me');
   this.route('groups', function() {
-    this.route('show', {path: '/:id'});
+    this.route('show', {path: '/:group_id'});
   });
   this.route('tasks');
 });

@@ -4,34 +4,5 @@
             <h1>OSF Group Management</h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <h3>Groups</h3>
-            {{#if showInput}}
-                {{input class="form-control" type="text" value=title autofocus="true" enter="addItem"}}
-            {{/if}}
-            <ul class="list-group">
-                {{#each model.groups as |item|}}
-                    <li class="list-group-item">{{#link-to "groups.show" item}}{{item.name}}{{/link-to}}</li>
-                {{/each}}
-            </ul>
-            <button {{action 'toggleShow'}} class="btn btn-success">&#43; New</button>
-        </div>
-        <div class="col-md-4">
-            <h3>Users</h3>
-            <ul class="list-group">
-                {{#each model.users as |item|}}
-                    <li class="list-group-item">{{item.fullName}}</li>
-                {{/each}}
-            </ul>
-        </div>
-        <div class="col-md-4">
-            <h3>Projects</h3>
-            <ul class="list-group">
-                {{#each model.projects as |item|}}
-                    <li class="list-group-item">{{item.title}}</li>
-                {{/each}}
-            </ul>
-        </div>
-    </div>
+    {{outlet}}
 </div>
