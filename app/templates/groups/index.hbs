@@ -2,7 +2,7 @@
     <div class="col-md-4">
         <h3>Groups</h3>
         {{#if showInput}}
-            {{input class="form-control" type="text" value=title autofocus="true" enter="addItem"}}
+            {{input class="form-control" type="text" autofocus="true" enter="addItem"}}
         {{/if}}
         <ul class="list-group">
             {{#each model.groups as |item|}}
