@@ -50,13 +50,14 @@
     "ember-cli-uglify": "^1.2.0",
     "ember-data": "^2.8.0",
     "ember-export-application-global": "^1.0.5",
+    "ember-inline-edit": "0.2.0",
     "ember-load-initializers": "^0.6.3",
     "ember-osf": "~0.3.0",
     "ember-page-title": "3.1.5",
     "ember-resolver": "^2.0.3",
-    "eslint": "^3.18.0",
     "ember-welcome-page": "^2.0.3",
     "emberfire": "2.0.6",
+    "eslint": "^3.18.0",
     "jscs": "^3.0.7",
     "loader.js": "^4.0.1",
     "phantomjs-prebuilt": "2.1.14",
@@ -64,7 +65,9 @@
   },
   "dependencies": {},
   "greenkeeper": {
-    "ignore": ["ember-cli"]
+    "ignore": [
+      "ember-cli"
+    ]
   },
   "jscsConfig": {
     "preset": "airbnb",
