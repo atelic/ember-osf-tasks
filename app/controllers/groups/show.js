@@ -21,7 +21,11 @@ export default Ember.Controller.extend({
       const groupId = this.get('model').id;
       this.store.findRecord('group', groupId).then(group => {
         const users = group.get('users');
-        group.set('users', users.concat([user]));
+        if (users) {
+          group.set('users', users.concat([user]));
+        } else {
+          group.set('users', [user]);
+        }
         group.save();
       });
     },
@@ -43,7 +47,11 @@ export default Ember.Controller.extend({
       const groupId = this.get('model').id;
       this.store.findRecord('group', groupId).then(group => {
         const projects = group.get('projects');
-        group.set('projects', projects.concat([proj]));
+        if(projects) {
+          group.set('projects', projects.concat([proj]));
+        } else {
+          group.set('projects', [proj]);
+        }
         group.save();
       });
     },
