@@ -24,7 +24,6 @@ export default Ember.Controller.extend({
           to: to,
           from: from
         });
-        console.log(payload);
       } else {
         const from = $('#manageOn').val();
         const permission = $('#manageVal').val();
@@ -32,7 +31,6 @@ export default Ember.Controller.extend({
           from: from,
           permission: permission
         });
-        console.log(payload);
       }
     }
   }
