@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/atelic/demo-ember-osf.svg?branch=develop)](https://travis-ci.org/abought/demo-ember-osf)
-[![Coverage Status](https://coveralls.io/repos/github/atelic/demo-ember-osf/badge.svg?branch=develop)](https://coveralls.io/github/abought/demo-ember-osf?branch=develop)
+[![Build Status](https://travis-ci.org/atelic/ember-osf-tasks.svg?branch=develop)](https://travis-ci.org/abought/demo-ember-osf)
+[![Coverage Status](https://coveralls.io/repos/github/atelic/ember-osf-tasks/badge.svg?branch=develop)](https://coveralls.io/github/abought/demo-ember-osf?branch=develop)
 [![Known Vulnerabilities](https://snyk.io/test/github/abought/demo-ember-osf/badge.svg)](https://snyk.io/test/github/abought/demo-ember-osf)
 [![Greenkeeper badge](https://badges.greenkeeper.io/abought/demo-ember-osf.svg)](https://greenkeeper.io/)
 
