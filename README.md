@@ -1,19 +1,18 @@
-[![Build Status](https://travis-ci.org/abought/demo-ember-osf.svg?branch=develop)](https://travis-ci.org/abought/demo-ember-osf)
-[![Coverage Status](https://coveralls.io/repos/github/abought/demo-ember-osf/badge.svg?branch=develop)](https://coveralls.io/github/abought/demo-ember-osf?branch=develop)
+[![Build Status](https://travis-ci.org/atelic/demo-ember-osf.svg?branch=develop)](https://travis-ci.org/abought/demo-ember-osf)
+[![Coverage Status](https://coveralls.io/repos/github/atelic/demo-ember-osf/badge.svg?branch=develop)](https://coveralls.io/github/abought/demo-ember-osf?branch=develop)
 [![Known Vulnerabilities](https://snyk.io/test/github/abought/demo-ember-osf/badge.svg)](https://snyk.io/test/github/abought/demo-ember-osf)
 [![Greenkeeper badge](https://badges.greenkeeper.io/abought/demo-ember-osf.svg)](https://greenkeeper.io/)
 
-# Demo-ember-osf
+# Ember OSF Tasks and Group Management
 
-This is a demonstration project that consumes the ember-osf Ember addon, produced by the Center for Open Science.
+This project in built on top of the Open Science Framework and serves to
+1. Make running specific tasks easier
+2. Organize users and projects into groups.
 
-The focus is on basic scaffolding, incorporating opinionated best practices such as documentation tools, style guide 
-checking, and CI build scripts/ code coverage metrics. 
 
 This application is based on Ember 2.8 LTS, yarn, nvm, Sass, and YUIDoc.  It applies linters for JS and template style, 
 and incorporates badges and config for health reporting services such as Travis and Coveralls.io.
 
-In the future we may add a dependency on `ember-i18n`, depending on goals for this demonstration app.
 
 ## Prerequisites
 
@@ -70,12 +69,3 @@ Testing with docker:
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-## Tips: where to go from here
-There are several packages that can enhance your large-scale applications, but are not included in this scaffold:
-- `ember-i18n` (may be added in the future)
-
-## Future features to add to this app
-In the future, we will add:
-- Demonstrate nested route / paginated requests according to ember best practices
-
