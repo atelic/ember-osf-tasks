@@ -3,3 +3,6 @@
     <br>
     Description: {{computedProject.description}}
 {{/if}}
+{{#unless computedProject.public}}
+    <button class="btn btn-success" {{action 'makePublic'}}>Make Public</button>
+{{/unless}}
