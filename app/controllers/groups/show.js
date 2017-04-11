@@ -4,6 +4,14 @@ export default Ember.Controller.extend({
   showAddUser: false,
   showAddProject: false,
   actions: {
+    saveGroup(newName) {
+      const groupId = this.get('model').id;
+      this.store.findRecord('group', groupId).then(group => {
+        group.set('name', newName);
+        group.save();
+      });
+
+    },
     deleteGroup(){
       if(confirm('This will delete this entire group. Are you sure?')) {
         const groupId = this.get('model').id;
