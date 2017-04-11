@@ -24,7 +24,7 @@
         {{/if}}
         {{#each model.projects as |item|}}
             <li class="list-group-item">
-                {{item}}
+                {{inline-project project=item}}
                 <a href="#" class="pull-right" {{action 'removeProject' item}}>remove</a>
             </li>
         {{/each}}

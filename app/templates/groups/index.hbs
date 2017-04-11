@@ -15,7 +15,7 @@
         <h3>Users</h3>
         <ul class="list-group">
             {{#each model.users as |item|}}
-                <li class="list-group-item">{{item.fullName}}</li>
+                <li class="list-group-item">{{inline-user user=item.id}}</li>
             {{/each}}
         </ul>
     </div>
@@ -23,7 +23,7 @@
         <h3>Your Projects</h3>
         <ul class="list-group">
             {{#each model.projects as |item|}}
-                <li class="list-group-item">{{item.title}}</li>
+                <li class="list-group-item">{{inline-project project=item.id}}</li>
             {{/each}}
         </ul>
     </div>
