@@ -1,10 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <img alt="{{model.fullName}} profile image" src="{{model.profileImage}}"/>
-            Full name: {{model.fullName}}
-            <br>
-            ID: {{model.id}}
+            {{inline-user user=model.id}}
             <br>
             Osf Link: <a href="https://staging.osf.io/{{model.id}}">osf.io/{{model.id}}</a>
         </div>
