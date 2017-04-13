@@ -11,12 +11,15 @@
               value=userSearchQuery
               type="text"
               autofocus="true"
+              focusOut=(action "clearUserSearch")
               keyUp=(action "userSearch" userSearchQuery)
               enter="addUser"}}
             {{#if userSearchResults}}
-                {{#each userSearchResults as |u|}}
-                    <span {{action 'addUser' u.id}}>{{u.fullName}} -- {{u.id}}</span><br>
-                {{/each}}
+                <li class="list-group-item">
+                    {{#each userSearchResults as |u|}}
+                        <li class="list-group-item" {{action 'addUser' u.id}}>{{u.fullName}} -- {{u.id}}</li><br>
+                    {{/each}}
+                </li>
             {{/if}}
         {{/if}}
         {{#each model.users as |item|}}
@@ -36,12 +39,15 @@
               value=projectSearchQuery
               type="text"
               autofocus="true"
+              focusOut=(action "clearProjectSearch")
               keyUp=(action "projectSearch" projectSearchQuery)
               enter="addProject"}}
             {{#if projectSearchResults}}
-                {{#each projectSearchResults as |p|}}
-                    <span {{action 'addProject' p.id}}>{{p.title}} -- {{p.id}}</span><br>
-                {{/each}}
+                <li class="list-group-item">
+                    {{#each projectSearchResults as |p|}}
+                        <li class="list-group-item" {{action 'addProject' p.id}}>{{p.title}} -- {{p.id}}</li><br>
+                    {{/each}}
+                </li>
             {{/if}}
         {{/if}}
         {{#each model.projects as |item|}}
