@@ -1,8 +1,8 @@
-<a href="{{link}}" target="_blank">{{computedProject.title}} ({{computedProject.id}})</a>
+<a href="{{link}}" rel="noopener" target="_blank">{{computedProject.title}} ({{computedProject.id}})</a>
 {{#if computedProject.description}}
     <br>
     Description: {{computedProject.description}}
 {{/if}}
 {{#unless computedProject.public}}
-    <button class="btn btn-success" {{action 'makePublic'}}>Make Public</button>
+    <button class="btn btn-success btn-sm" {{action 'makePublic'}}>Make Public</button>
 {{/unless}}

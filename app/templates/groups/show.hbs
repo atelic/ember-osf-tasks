@@ -6,7 +6,18 @@
     <div class="col-md-6">
         <h3>Members</h3>
         {{#if showAddUser}}
-            {{input class="form-control" type="text" autofocus="true" enter="addUser"}}
+            {{input
+              class="form-control"
+              value=userSearchQuery
+              type="text"
+              autofocus="true"
+              keyUp=(action "userSearch" userSearchQuery)
+              enter="addUser"}}
+            {{#if userSearchResults}}
+                {{#each userSearchResults as |u|}}
+                    <span {{action 'addUser' u.id}}>{{u.fullName}} -- {{u.id}}</span><br>
+                {{/each}}
+            {{/if}}
         {{/if}}
         {{#each model.users as |item|}}
             <li class="list-group-item">
@@ -20,7 +31,18 @@
     <div class="col-md-6">
         <h3>Projects</h3>
         {{#if showAddProject}}
-            {{input class="form-control" type="text" autofocus="true" enter="addProject"}}
+            {{input
+              class="form-control"
+              value=projectSearchQuery
+              type="text"
+              autofocus="true"
+              keyUp=(action "projectSearch" projectSearchQuery)
+              enter="addProject"}}
+            {{#if projectSearchResults}}
+                {{#each projectSearchResults as |p|}}
+                    <span {{action 'addProject' p.id}}>{{p.title}} -- {{p.id}}</span><br>
+                {{/each}}
+            {{/if}}
         {{/if}}
         {{#each model.projects as |item|}}
             <li class="list-group-item">
