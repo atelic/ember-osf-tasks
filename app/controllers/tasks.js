@@ -20,14 +20,15 @@ export default Ember.Controller.extend({
       if (this.get('move')) {
         const from = $('#moveFrom').val();
         const to = $('#moveTo').val();
-        const payload = JSON.stringify({
+        // TODO until AWS sdk can be loaded in ember this is all we can do
+        const payload = JSON.stringify({ // eslint-disable-line no-unused-vars
           to: to,
           from: from
         });
       } else {
         const from = $('#manageOn').val();
         const permission = $('#manageVal').val();
-        const payload = JSON.stringify({
+        const payload = JSON.stringify({ // eslint-disable-line no-unused-vars
           from: from,
           permission: permission
         });
