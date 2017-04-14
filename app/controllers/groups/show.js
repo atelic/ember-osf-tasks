@@ -1,7 +1,53 @@
 import Ember from 'ember';
 
+/* Returns a function, that, as long as it continues to be invoked, will not
+   be triggered. The function will be called after it stops being called for
+   N milliseconds.
+*/
+function debounce(func, wait) {
+  let timeout;
+  return function() {
+    const context = this, args = arguments;
+    const later = function() {
+      timeout = null;
+    };
+    const callNow = !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow)
+      func.apply(context, args);
+  };
+}
+
+function userSearchFn(query) {
+  if (query) {
+    const results = this.get('store').query('user', {
+      filter: {
+        full_name: query
+      }
+    });
+    this.set('userSearchResults', results);
+  } else {
+    this.set('userSearchResults', []);
+  }
+}
+
+function projectSearchFn(query) {
+  if (query) {
+    const results = this.get('store').query('node', {
+      filter: {
+        title: query
+      }
+    });
+    this.set('projectSearchResults', results);
+  } else {
+    this.set('projectSearchResults', []);
+  }
+}
+
 export default Ember.Controller.extend({
   store: Ember.inject.service(),
+  debounceLimit: 200,
 
   userSearchResults: [],
   userSearchQuery: '',
@@ -12,35 +58,13 @@ export default Ember.Controller.extend({
   showAddUser: false,
   showAddProject: false,
   actions: {
-    userSearch(query) {
-      if (query) {
-        const results = this.get('store').query('user', {
-          filter: {
-            full_name: query
-          }
-        });
-        this.set('userSearchResults', results);
-      } else {
-        this.set('userSearchResults', []);
-      }
-    },
+    userSearch: debounce(userSearchFn, this.debounceLimit),
     clearUserSearch() {
       this.set('userSearchQuery', '');
       this.set('userSearchResults', []);
       this.toggleProperty('showAddUser');
     },
-    projectSearch(query) {
-      if (query) {
-        const results = this.get('store').query('node', {
-          filter: {
-            title: query
-          }
-        });
-        this.set('projectSearchResults', results);
-      } else {
-        this.set('projectSearchResults', []);
-      }
-    },
+    projectSearch: debounce(projectSearchFn, this.debounceLimit),
     clearProjectSearch() {
       this.set('projectSearchQuery', '');
       this.set('projectSearchResults', []);
