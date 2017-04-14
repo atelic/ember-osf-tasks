@@ -4,5 +4,6 @@
     Description: {{computedProject.description}}
 {{/if}}
 {{#unless computedProject.public}}
-    <button class="btn btn-success btn-sm" {{action 'makePublic'}}>Make Public</button>
+    <br>
+    <button class="btn btn-warning btn-sm" {{action 'makePublic'}}>Make Public</button>
 {{/unless}}
