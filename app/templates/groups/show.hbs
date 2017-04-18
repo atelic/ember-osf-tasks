@@ -11,7 +11,6 @@
               value=userSearchQuery
               type="text"
               autofocus="true"
-              focusOut=(action "clearUserSearch")
               keyUp=(action "userSearch" userSearchQuery)
               enter="addUser"}}
             {{#if userSearchResults}}
@@ -39,7 +38,6 @@
               value=projectSearchQuery
               type="text"
               autofocus="true"
-              focusOut=(action "clearProjectSearch")
               keyUp=(action "projectSearch" projectSearchQuery)
               enter="addProject"}}
             {{#if projectSearchResults}}
