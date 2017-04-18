@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/atelic/ember-osf-tasks.svg?branch=develop)](https://travis-ci.org/abought/demo-ember-osf)
-[![Coverage Status](https://coveralls.io/repos/github/atelic/ember-osf-tasks/badge.svg?branch=develop)](https://coveralls.io/github/abought/demo-ember-osf?branch=develop)
-[![Known Vulnerabilities](https://snyk.io/test/github/abought/demo-ember-osf/badge.svg)](https://snyk.io/test/github/abought/demo-ember-osf)
+[![Build Status](https://travis-ci.org/atelic/ember-osf-tasks.svg?branch=develop)](https://travis-ci.org/atelic/ember-osf-tasks)
 [![Greenkeeper badge](https://badges.greenkeeper.io/abought/demo-ember-osf.svg)](https://greenkeeper.io/)
 
 # Ember OSF Tasks and Group Management
@@ -27,8 +25,8 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone https://github.com/abought/demo-ember-osf.git -o upstream` this repository
-* `cd demo-ember-osf`
+* `git clone https://github.com/atelic/ember-osf-tasks.git -o upstream` this repository
+* `cd ember-osf-tasks`
 * `yarn install --pure-lockfile`
 * `bower install`
 * `ember generate ember-osf` - will generate `config/local.yml`; fill in the
@@ -47,7 +45,7 @@ projects.
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
 ### With Docker
-* `docker build -t demo-ember-osf . && docker run -p 4200:4200 demo-ember-osf BACKEND=stage ./node_modules/ember-cli/bin/ember serve`
+* `docker build -t ember-osf-tasks . && docker run -p 4200:4200 ember-osf-tasks BACKEND=stage ./node_modules/ember-cli/bin/ember serve`
 
 ### Code Generators
 
@@ -63,7 +61,7 @@ To run all tests required for CI, use:
 * `yarn test`
 
 Testing with docker:
-* `docker build -t demo-ember-osf . && docker run demo-ember-osf`
+* `docker build -t ember-osf-tasks . && docker run ember-osf-tasks`
 
 ### Building
 
