@@ -12,6 +12,8 @@ module.exports = function(environment) {
       databaseURL: 'https://ember-osf-groups.firebaseio.com',
       storageBucket: 'ember-osf-groups.appspot.com',
     },
+    awsAccessKey: 'XXX',
+    awsSecretKey: 'XXX',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

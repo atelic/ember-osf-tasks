@@ -1,9 +1,11 @@
 /* global AWS */
 import $ from 'jquery';
 import Ember from 'ember';
+import ENV from 'demo-ember-osf/config/environment';
 
-AWS.config.accessKeyId = 'XXX';
-AWS.config.secretAccessKey = 'XXX';
+AWS.config.accessKeyId = ENV.awsAccessKey;
+AWS.config.secretAccessKey = ENV.awsSecretKey;
+
 const LAMBDA_CONFIG = {
   region: 'us-west-2',
   apiVersion: '2015-03-31'
