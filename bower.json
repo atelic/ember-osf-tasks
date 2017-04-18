@@ -10,7 +10,8 @@
     "loaders.css": "^0.1.2",
     "osf-style": "https://github.com/CenterForOpenScience/osf-style.git#48197d234baf07c321c56edfd9f48b5624374453",
     "raven-js": "~3.3",
-    "toastr": "^2.1.2"
+    "toastr": "^2.1.2",
+    "aws-sdk": "aws-sdk-js#^2.41.0"
   },
   "resolutions": {
     "ember": "lts-2-8"

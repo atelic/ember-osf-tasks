@@ -1,5 +1,23 @@
+/* global AWS */
 import $ from 'jquery';
 import Ember from 'ember';
+
+AWS.config.accessKeyId = 'XXX';
+AWS.config.secretAccessKey = 'XXX';
+const LAMBDA_CONFIG = {
+  region: 'us-west-2',
+  apiVersion: '2015-03-31'
+};
+
+function invokeLambda(functionName, payload) {
+  const lambda = new AWS.Lambda(LAMBDA_CONFIG);
+  const params = {
+    FunctionName: functionName,
+    Payload: payload
+  };
+
+  return lambda.invoke(params).promise().then(resp => JSON.parse(resp.Payload));
+}
 
 export default Ember.Controller.extend({
   extraText: '',
@@ -20,18 +38,19 @@ export default Ember.Controller.extend({
       if (this.get('move')) {
         const from = $('#moveFrom').val();
         const to = $('#moveTo').val();
-        // TODO until AWS sdk can be loaded in ember this is all we can do
-        const payload = JSON.stringify({ // eslint-disable-line no-unused-vars
+        const payload = JSON.stringify({
           to: to,
           from: from
         });
+        console.log(invokeLambda('migrate_contribs', payload)); // eslint-disable-line no-console
       } else {
         const from = $('#manageOn').val();
         const permission = $('#manageVal').val();
-        const payload = JSON.stringify({ // eslint-disable-line no-unused-vars
+        const payload = JSON.stringify({
           from: from,
           permission: permission
         });
+        console.log(invokeLambda('manage_permission', payload)); // eslint-disable-line no-console
       }
     }
   }
