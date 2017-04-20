@@ -36,7 +36,9 @@ function projectSearchFn(query) {
   if (query) {
     const results = this.get('store').query('node', {
       filter: {
-        title: query
+        title: {
+          icontains: query
+        }
       }
     });
     this.set('projectSearchResults', results);
