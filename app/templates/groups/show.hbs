@@ -16,6 +16,7 @@
             {{#if userSearchResults}}
                 <li class="list-group-item">
                     {{#each userSearchResults as |u|}}
+                        {{! template-lint-disable invalid-interactive }}
                         <li class="list-group-item" {{action 'addUser' u.id}}>{{u.fullName}} -- {{u.id}}</li><br>
                     {{/each}}
                 </li>
@@ -43,6 +44,7 @@
             {{#if projectSearchResults}}
                 <li class="list-group-item">
                     {{#each projectSearchResults as |p|}}
+                        {{! template-lint-disable invalid-interactive }}
                         <li class="list-group-item" {{action 'addProject' p.id}}>{{p.title}} -- {{p.id}}</li><br>
                     {{/each}}
                 </li>
