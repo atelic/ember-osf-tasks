@@ -17,13 +17,18 @@
             {{#each model.users as |item|}}
                 <li class="list-group-item">
                     {{inline-user user=item.id}}
-                    <a href="#" class="pull-right" {{action 'toggleAddUser' item}}>Add &#43;</a>
-                    {{#if showAdd}}
-                        {{#each model.groups as |group|}}
-                            {{! template-lint-disable invalid-interactive }}
-                            <li {{action 'addUser' item group}}class="list-group-item">{{group.name}}</li>
-                        {{/each}}
-                    {{/if}}
+                    {{#rl-dropdown-container class="dropdown"}}
+                        {{#rl-dropdown-toggle class="btn btn-default"}}
+                            Add &#43; <span class="caret"></span>
+                        {{/rl-dropdown-toggle}}
+
+                        {{#rl-dropdown tagName="ul" class="dropdown-menu" closeOnChildClick="a"}}
+                            {{#each model.groups as |group|}}
+                                {{! template-lint-disable invalid-interactive }}
+                                <a {{action 'addUser' item group}}class="list-group-item">{{group.name}}</a>
+                            {{/each}}
+                        {{/rl-dropdown}}
+                    {{/rl-dropdown-container}}
                 </li>
             {{/each}}
         </ul>
