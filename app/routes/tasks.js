@@ -1,14 +1,20 @@
 import Ember from 'ember';
-import CurrentUserMixin from '../mixins/current-user';
 
-export default Ember.Route.extend(CurrentUserMixin, {
+export default Ember.Route.extend({
+  currentUser: Ember.inject.service(),
+  user: null,
   model() {
-    return {
-      projects: this.store.query('node', {
-        filter: {
-          contributors: this.get('user').id
-        }
-      })
-    };
+    return this.get('currentUser')
+      .load()
+      .then(user => {
+        this.set('user', user);
+        return {
+          projects: this.store.query('node', {
+            filter: {
+              contributors: user.id
+            }
+          })
+        };
+      });
   }
 });
