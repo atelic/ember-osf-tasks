@@ -9,6 +9,7 @@ test('it renders', function(assert) {
 
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
+  this.set('project', 1);
 
   this.render(hbs`{{inline-project}}`);
 
