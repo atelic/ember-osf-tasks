@@ -41,11 +41,11 @@ projects.
 ## Running / Development
 
 ### Without Docker
-* `BACKEND=stage ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* `BACKEND=stage ember server --port 3000`
+* Visit your app at [http://localhost:3000](http://localhost:3000).
 
 ### With Docker
-* `docker build -t ember-osf-tasks . && docker run -p 4200:4200 ember-osf-tasks BACKEND=stage ./node_modules/ember-cli/bin/ember serve`
+* `docker build -t ember-osf-tasks . && docker run -p 3000:3000 ember-osf-tasks BACKEND=stage ./node_modules/ember-cli/bin/ember serve`
 
 ### Code Generators
 
