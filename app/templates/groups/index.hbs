@@ -37,7 +37,20 @@
         <h3>Your Projects</h3>
         <ul class="list-group">
             {{#each model.projects as |item|}}
-                <li class="list-group-item">{{inline-project project=item.id}}</li>
+                <li class="list-group-item">{{inline-project project=item.id}}
+                {{#rl-dropdown-container class="dropdown"}}
+                    {{#rl-dropdown-toggle class="btn btn-default"}}
+                        Add &#43; <span class="caret"></span>
+                    {{/rl-dropdown-toggle}}
+
+                    {{#rl-dropdown tagName="ul" class="dropdown-menu" closeOnChildClick="a"}}
+                        {{#each model.groups as |group|}}
+                            {{! template-lint-disable invalid-interactive }}
+                            <a {{action 'addProject' item group}}class="list-group-item">{{group.name}}</a>
+                        {{/each}}
+                    {{/rl-dropdown}}
+                {{/rl-dropdown-container}}
+                </li>
             {{/each}}
         </ul>
     </div>

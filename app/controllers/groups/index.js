@@ -24,11 +24,24 @@ export default Ember.Controller.extend({
           if (!users.includes(user.id))
             group.set('users', users.concat([user.id]));
         } else {
-          group.set('users', [user]);
+          group.set('users', [user.id]);
         }
         group.save();
       });
 
+    },
+    addProject(project, group) {
+      const groupId = group.id;
+      this.store.findRecord('group', groupId).then(group => {
+        const projects = group.get('projects');
+        if(projects) {
+          if(!projects.includes(project.id))
+            group.set('projects', projects.concat([project.id]));
+          } else {
+            group.set('projects', [project.id]);
+          }
+        group.save();
+      });
     }
   }
 });
